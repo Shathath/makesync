@@ -22,3 +22,7 @@ li{
 li .active{
 	background-color: goldenrod;
 }
+
+.gear:hover{
+	cursor: pointer;
+}

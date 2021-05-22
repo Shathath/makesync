@@ -3,14 +3,15 @@ import {ADD_TASK} from "../types/types"
 
 const intialState = [{
 	id:1,
-	name : 'Hello',
-	body: 'test',
-	assignedTo : [],
-	duedate: new Date(),
-	comments : []
+	name : 'Server Configuration',
+	createdBy :'shathatha',
+	date : new Date(),
+	description : 'system wide server configuration for the',
+	todos : [],
+	
 }]
 
-export const todoReducer = (state = intialState,action) =>{
+export const projectReducer = (state = intialState,action) =>{
 	switch(action.type){
 		case ADD_TASK:
 			return [...state,action.todos]		

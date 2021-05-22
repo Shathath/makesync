@@ -4,9 +4,9 @@ import KanbanBoard from './kanbanboard'
 
 export default function MainComponent(props){
 	const {name} = props;
-	if(name == 'myprojects')
+	if(name === 'myprojects')
 		return <Projects />
-	else if(name=='kanbanboard')
+	else if(name ==='kanbanboard')
 		return <KanbanBoard />
 	else	
 		return null

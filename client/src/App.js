@@ -1,11 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux'
 
-import { addTodo } from '../src/actions/actions'
 import AllComponents from '../src/components/allcomponents'
-import {BrowserRouter,withRouter} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 
-function App(props){
+function App(){
 
 	return(
 		<BrowserRouter>
@@ -15,14 +13,5 @@ function App(props){
 		</BrowserRouter>
 	)
 }
-const mapStateToProps = (state,props)=>{
-	return {
-		todos : state.todos
-	}
-}
-const mapDispatchToProps = (dispatch)=>{
-	return {
 
-	}
-}
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+export default App

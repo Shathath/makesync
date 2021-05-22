@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter as Router,Switch,Route,Link,NavLink,useLocation} from 'react-router-dom';
+import {NavLink,useLocation} from 'react-router-dom';
 
 
 import Icons from '../utils/icons';
@@ -7,9 +7,11 @@ import '../css/main.css'
 
 export default function Routes(){
 	const location = useLocation().pathname;
-	let isProject,isKanban = ''
-	if(location == '/myprojects') isProject='active'
-	else if(location == '/kanban') isKanban='active'
+	let isProject,isKanban,isevents = ''
+	if(location === '/myprojects') isProject='active'
+	else if(location === '/kanban') isKanban='active'
+	else
+		isevents = 'active'
 
 	return(
 		<React.Fragment>
@@ -23,7 +25,7 @@ export default function Routes(){
 	  				<Icons name="KANBAN"  width="25" height="25" stroke="#fff"/><span className="ml-3  d-md-none d-lg-block d-sm-none">Kanban board</span>
 				</NavLink>
 			</li>
-			<li className={`mt-2`} style={{listStyle:'none',display:'flex',}}>
+			<li className={`mt-2 ${isevents}`} style={{listStyle:'none',display:'flex',}}>
 				<NavLink className="hide-route-style" to='/events'>
 	  				<Icons name="CALENDAR"  width="25" height="25" stroke="#fff"/><span className="ml-3  d-md-none d-lg-block d-sm-none">Events</span>
 				</NavLink>
