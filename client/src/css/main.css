@@ -1,0 +1,24 @@
+.hide-route-style{
+	color:#fff;
+	text-decoration: none;
+	display: flex;
+	width: 90%;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+li{
+	margin-left: 10px;
+}
+.hide-route-style:hover{
+	cursor: pointer;
+	color: #fff;
+	text-decoration: none;	
+}
+
+.sidebar{
+	padding: 0px;
+}
+
+li .active{
+	background-color: goldenrod;
+}

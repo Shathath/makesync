@@ -3,13 +3,16 @@ import {connect} from 'react-redux'
 
 import { addTodo } from '../src/actions/actions'
 import AllComponents from '../src/components/allcomponents'
+import {BrowserRouter,withRouter} from 'react-router-dom';
 
 function App(props){
-	console.log("Props",props)
+
 	return(
-		<div>
-			<AllComponents />
-		</div>
+		<BrowserRouter>
+			<div>
+				<AllComponents />
+			</div>
+		</BrowserRouter>
 	)
 }
 const mapStateToProps = (state,props)=>{
