@@ -13,8 +13,13 @@ function Projects(props){
 		props.loadProjects()
 	},[])
 
-	const gotoProjectPage = (id)=>{
-		props.history.push(`/projects/${id}`)
+	const gotoProjectPage = (id,val)=>{
+		props.history.push({
+			pathname: `/projects/${id}`,
+			state :{
+				projectdetail : val
+			}
+		})
 	}
 	//console.log("My Projects",projects,projects.length)
 	return(
@@ -34,7 +39,7 @@ function Projects(props){
 							return (
 								
 									<div className='col-xl-3 col-lg-4 col-sm-6 col-md-12 ml-3 mt-3'>
-										<div className="card vertical-dot" style={{width: "15rem",height:'130px',}} key={val.id} onClick={()=>gotoProjectPage(val.id,val.name)}>
+										<div className="card vertical-dot" style={{width: "15rem",height:'130px',}} key={val.id} onClick={()=>gotoProjectPage(val.id,val)}>
 											<div className="card-body">
 												<div className="vertical-dot" style={{float:'right'}}>
 													<Icons name='DOT' width='20' height='20' />
@@ -52,8 +57,6 @@ function Projects(props){
 				</div>		
 			</div>
 		</div>
-
-			
 			<button className='btn' onClick={()=>setModal(true)} style={{borderRadius:'50%',fontSize:'20px',textAlign:'center',backgroundColor:'#644CF3', boxShadow: '0px 0px 0px 6px #DEDEED',position:'fixed',bottom:'100px',right:'60px'}}><Icons name='PLUS' width='20' height='20' stroke='#fff'></Icons></button>
 			{isModalOpen ? <ProjectModal onClose={setModal} isModalOpen={isModalOpen}/> : null}
 		   </div>
@@ -61,8 +64,9 @@ function Projects(props){
 }
 
 const mapStateToProps = (state,props)=>{
+	console.log(state.allprojects)
 	return {
-		projectObj : state.projects
+		projectObj : state.allprojects
 	}
 }
 const mapDispatchToProps = (dispatch)=>{

@@ -13,7 +13,7 @@ export const projectReducer = (state = intialState,action) =>{
 		case START_LOADER :
 			return {...state,loaderflag:true}
 		case ADD_TASK:
-			return {...state,projects:[...state.projects,action.projectObj]}
+			return {...state,projects: [...state.projects,action.projectObj]}
 		case END_LOADER:
 			return {...state,loaderflag:false,success:''}
 		case ERROR_MSG:

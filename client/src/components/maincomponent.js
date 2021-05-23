@@ -1,6 +1,7 @@
 import React from 'react';
 import Projects from './projects';
 import KanbanBoard from './kanbanboard'
+import ProjectDetails from './projectdetails';
 
 export default function MainComponent(props){
 	const {name} = props;
@@ -9,7 +10,7 @@ export default function MainComponent(props){
 	else if(name ==='kanbanboard')
 		return <KanbanBoard />
 	else if(name == 'projectdetails')
-		return <KanbanBoard />
+		return <ProjectDetails />
 	else	
 		return null
 }

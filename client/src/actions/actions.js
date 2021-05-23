@@ -29,7 +29,7 @@ export const loadProjects = ()=>{
 				userid : 1
 			}
 		}).then(response =>{
-			if(response.data.message == 'success'){
+			if(response.data.message === 'success'){
 				dispatch(initialize(response.data))
 				dispatch(initLoad('END_LOADER',false))
 			}

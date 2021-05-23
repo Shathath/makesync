@@ -43,7 +43,6 @@ const ProjectModal = (props)=>{
 }
 
 const mapStateToProps = (state) => {
-	console.log("Projects",state.projects.loaderflag)
 	return {
 		isloading  : state.projects.loaderflag
 	}
