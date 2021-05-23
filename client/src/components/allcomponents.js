@@ -24,7 +24,8 @@ function AllComponents(){
 							</div>
 							<div className="col-lg-10 col-md-10 col-sm-9 mb-3" style={{paddingBottom:'5rem'}}>
 									<Switch>
-										<Route path='/myprojects' component={()=><MainComponent name="myprojects"></MainComponent>}></Route>
+										<Route path='/projects/:id' component={()=><MainComponent name="projectdetails"></MainComponent>}></Route>
+										<Route path='/projects' component={()=><MainComponent name="projects"></MainComponent>}></Route>
 										<Route path='/kanban' component={()=><MainComponent name="kanbanboard"></MainComponent>}></Route>
 									</Switch>
 							</div>

@@ -8,7 +8,7 @@ import '../css/main.css'
 export default function Routes(){
 	const location = useLocation().pathname;
 	let isProject,isKanban,isevents = ''
-	if(location === '/myprojects') isProject='active'
+	if(location.includes('projects') === '/projects') isProject='active'
 	else if(location === '/kanban') isKanban='active'
 	else
 		isevents = 'active'
@@ -16,7 +16,7 @@ export default function Routes(){
 	return(
 		<React.Fragment>
 			<li className={`mt-3 ${isProject}`} style={{listStyle:'none',display:'flex',}}>
-				<NavLink className="hide-route-style" to='/myprojects'>
+				<NavLink className="hide-route-style" to='/projects'>
 					<Icons name="LIST"  width="25" height="25" stroke="#fff"/><span className="ml-3  d-lg-block d-sm-none">My Projects</span>
 				</NavLink>
 			</li>
