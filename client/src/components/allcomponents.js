@@ -22,7 +22,7 @@ function AllComponents(){
 									</div>
 									<Routes />
 							</div>
-							<div className="col-lg-10 col-md-10 col-sm-9 mb-3" style={{paddingBottom:'5rem'}}>
+							<div className="col-lg-10 col-md-10 col-sm-9 mb-3" style={{paddingBottom:'5rem',backgroundColor:'#EDEDFB'}}>
 									<Switch>
 										<Route path='/projects/:id' component={()=><MainComponent name="projectdetails"></MainComponent>}></Route>
 										<Route path='/projects' component={()=><MainComponent name="projects"></MainComponent>}></Route>

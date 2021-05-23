@@ -18,10 +18,18 @@ function Projects(props){
 	}
 	//console.log("My Projects",projects,projects.length)
 	return(
-		
+		<div>
+		<div className="row mt-3" style={{marginLeft:'5rem'}}>
+					<div className="col-lg-6 col-md-4 col-sm-12 ml-3">
+						<input className='form-control' type='text' placeholder="Search projects"/>
+					</div>
+					<div className="col-lg-3 col-md-4 col-sm-12 ml-3 ">
+						<button className="btn btn-primary">Search</button>
+					</div>
+		</div>
 		<div style={{height:'95vh',overflowY:'scroll'}}>
 			<div className ="col-lg-12 col-md-6 col-sm-4">
-			<div className="row" style={{marginLeft:'4rem'}}>
+				<div className="row" style={{marginLeft:'4rem'}}>
 					{projects && projects.length > 0 ? projects.map((val)=>{
 							return (
 								
@@ -42,8 +50,8 @@ function Projects(props){
 						}) : <h1>No projects has been created yet. Please click plus button to create new Project</h1>
 					}	
 				</div>		
-					</div>
-
+			</div>
+		</div>
 
 			
 			<button className='btn' onClick={()=>setModal(true)} style={{borderRadius:'50%',fontSize:'20px',textAlign:'center',backgroundColor:'#644CF3', boxShadow: '0px 0px 0px 6px #DEDEED',position:'fixed',bottom:'100px',right:'60px'}}><Icons name='PLUS' width='20' height='20' stroke='#fff'></Icons></button>
