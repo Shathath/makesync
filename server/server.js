@@ -18,10 +18,19 @@ app.get('/',()=>{
 	})
 })
 
+app.get('/getusers',(req,res)=>{
+	const {username} = req.query;
+	if(!username)
+		return 
+	db.query(`select name,id from users where name like '%${username}%' order by name asc`,(err,result)=>{
+		if(err)
+			return res.status(400).send({message:'failure',error:'Something went wrong'})
+		return res.status(200).send({message:'success',users:result.rows})
+	})
+})
+
 app.get('/getprojects',(req,res)=>{
-	console.log('Receiving',req.query)
 	const userid = req.query.userid;
-	console.log(`Query is select * from projects where createdby=${userid}`)
 	db.query(`select * from projects where createdby=${userid}`,(error,result)=>{
 		if(error)
 			return res.status(400).send({message:'Something went wrong'})
